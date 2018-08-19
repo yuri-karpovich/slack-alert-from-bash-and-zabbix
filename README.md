@@ -4,8 +4,8 @@ You can use it to send messages **directly from console** or from **[Zabbix](htt
 
 ## Preconditions
 
-1. make sure the script is executable: `chmod +x /path/to/slack.sh`
-2. make sure that `curl` is installed in your system: `which curl`
+1. Zabbix version >= `3.X`
+2. `curl` is installed in your system: `which curl`
 
 ## How to use
 ```bash
@@ -26,9 +26,9 @@ Parameters list:
 1. Install [Incoming Webhooks app](https://slack.com/apps/A0F7XDUAZ-incoming-webhooks) to your channel in Slack
     1. After installation you will get a webhook URL. You will need it later
 2. Deploy `slack.sh` script to [AlertScripts](https://www.zabbix.com/documentation/3.4/manual/config/notifications/media/script) folder
+    > If you are using `Docker` you can install Zabbix from Docker Image: https://hub.docker.com/r/spoonest/zabbix-appliance-with-slack/ 
     1. By default the folder path is `/usr/local/share/zabbix/alertscripts`
-    2. Make sure that file is executable: `chmod +x slack.sh`
-    3. Make sure that `curl` is installed in your system: `which curl`
+    2. Make sure the script is executable: `chmod +x /path/to/slack.sh`
 3. Create new Media Type in Zabbix: **Administration** > **Media Types**
     - _Name_: `Slack`
     - _Type_: `Script`
@@ -109,3 +109,4 @@ Parameters list:
             - _Send to Users_: `slack_critical`
         ![action_4](https://raw.githubusercontent.com/yuri-karpovich/slack-alert-from-bash-and-zabbix/master/images/action_4.png)
 7. Done! You will receive notifications from Zabbix to Slack
+        ![message1](https://raw.githubusercontent.com/yuri-karpovich/slack-alert-from-bash-and-zabbix/master/images/message1.png)

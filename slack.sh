@@ -134,4 +134,9 @@ payload="payload={
             \"short\":false
 }]}]}\"}"
 
-curl -m 5 --data-urlencode "${payload}" ${url}
+result=`curl -m 5 --data-urlencode "${payload}" ${url}`
+
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+[ "$result" == 'No team' ] && echo -e  "${RED}ERROR. Check that webhook URL is correct${NC}" && exit 1
+echo SUCCESS!
