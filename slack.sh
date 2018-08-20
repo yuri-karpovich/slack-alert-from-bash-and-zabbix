@@ -91,11 +91,11 @@ default_username='Incoming WebHooks Script'
 username=${username_from_params:-"${default_username}"}
 
 # Colors
-blue='#249DFF'
-yellow='#E1EA95'
-orange='#FFB568'
-light_red='#D05C51'
-red='#D00000'
+blue='#7499FF'
+yellow='#FFC859'
+orange='#FFA059'
+light_red='#E97659'
+red='#E45959'
 green='#118919'
 purple='#FF38C4'
 
